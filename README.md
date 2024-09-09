@@ -1,5 +1,5 @@
 # nodejs-worker-threads-sample
-woker threads sample for nodejs
+worker threads sample for nodejs
 ## usage:
 ```
 git clone git@github.com:liqiang88/nodejs-worker-threads-sample.git
