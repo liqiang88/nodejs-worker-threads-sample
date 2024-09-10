@@ -7,7 +7,11 @@ cd nodejs-worker-threads-sample
 npm i
 ```
 ### Parse Excel using Worker threads
-usage:
 ```
 node parseExcel/main.cjs
+```
+
+### Fibonacci Number
+```
+node fibonacci/main.js
 ```
