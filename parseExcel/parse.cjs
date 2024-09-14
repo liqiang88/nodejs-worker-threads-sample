@@ -52,11 +52,7 @@ if (!isMainThread) {
         let obj = {};
         // cell.type:6-formula;2-number;3-string;0-merge
         row.eachCell((cell, colNumber) => {
-          let value = cell.value;
-
-          if (_.isPlainObject(value)) {
-            value = _.get(value, 'text', '');
-          }
+          let value = getVal(cell);
 
           if (rowNumber === 1) {
             keys.push(value);
@@ -89,5 +85,11 @@ if (!isMainThread) {
 
   };
   parseExcel();
+
+  const getVal = (cell) => {
+    let v = cell.value; if (!v) return '';
+    v = (v.richText ? v.richText.map(({ text }) => text).join('') : v.toString());
+    return v.trim();
+  }
 }
 
